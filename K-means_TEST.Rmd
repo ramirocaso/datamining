@@ -1,0 +1,42 @@
+---
+title: "K-means"
+author: "Ramiro Casó"
+date: "8/21/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Tutorial para K-Means
+
+Este es un tutorial para hacer K-Means en R. En esta parte podrán ver el texto explicando cada una de las cosas que tengo que hacer. 
+
+El primer paso es cargar la hoja de datos. Usaremos el ejemplo de Ford Ka visto en clase. 
+
+```{r}
+library(readxl)
+Ford_Ka_Students_CLASE <- read_excel("Ford Ka (Students) CLASE.xls", 
+    sheet = "Psychographic Data")
+View(Ford_Ka_Students_CLASE)
+```
+
+
+## Analisis Exploratorio de datos
+
+Haremos un pequeño análisis exploratorio de datos. 
+```{r}
+summary(Ford_Ka_Students_CLASE)
+```
+
+Seguidamente normalizaremos los datos. 
+
+```{r}
+Ka_Norm <-scale(Ford_Ka_Students_CLASE[,-1])
+Ka_Norm
+echo = FALSE 
+```
+
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
